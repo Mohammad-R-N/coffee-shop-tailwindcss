@@ -4,8 +4,12 @@ module.exports = {
     "./public/templates/*.{html,js}",
     "./public/scripts/*.{html,js}"
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      letterSpacing: {
+        "tightest": "-0.065em"
+      },
       colors: {
         "brown": {
           100: "#ECE0D1",
@@ -30,6 +34,11 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "&>*:hover");
+    }
+  ],
 }
 
