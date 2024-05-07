@@ -44,7 +44,45 @@
 
     body {
         @apply font-Dana;
-        background-image: url("../img/headerBgDesktop.png");
+        background-image: url("../img/headerBgDesktop.webp");
         background-repeat: no-repeat;
+    }
+}
+
+@layer components {
+    .submenu__item--active::after {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: #FDBA74;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .submenu__item--active {
+        padding: 10px;
+        position: relative;
+        color: #FDBA74;
+    }
+
+    .submenu {
+        @apply hidden flex-col gap-y-3 pr-7 mt-3 text-sm text-zinc-600 dark:text-white
+    }
+
+    .submenu--open {
+        @apply flex
+    }
+
+    .overlay {
+        @apply bg-black/40 md:hidden fixed inset-0 w-full h-full z-10 invisible opacity-0 transition-all
+    }
+
+    .overlay--visible {
+        @apply visible opacity-100
     }
 }
