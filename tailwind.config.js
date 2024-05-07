@@ -31,6 +31,9 @@ module.exports = {
         "Morabba": "Morabba Light",
         "MorabbaMedium": "Morabba Medium",
         "MorabbaBold": "Morabba Bold",
+      },
+      spacing: {
+        "30": "7.5rem"
       }
     },
   },
